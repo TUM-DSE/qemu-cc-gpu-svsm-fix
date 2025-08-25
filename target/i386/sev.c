@@ -494,6 +494,7 @@ static void sev_apply_cpu_context(CPUState *cpu)
 static int check_sev_features(SevCommonState *sev_common, uint64_t sev_features,
                               Error **errp)
 {
+    trace_kvm_sev_snp_check_vmsa_sev_features(sev_features);
     /*
      * Ensure SEV_FEATURES is configured for correct SEV hardware and that
      * the requested features are supported. If SEV-SNP is enabled then
